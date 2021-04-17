@@ -19,33 +19,7 @@
     <footer>
 <main class="container-fluid"><div class="row">
 
-  <div class="col-md-4 col-12" >
-    <h1>Links</h1>
-    <ul>
-      <li><a href="">a</a></li>
-      <li><a href="">a</a></li>
-      <li><a href="">a</a></li>
-      <li><a href="">a</a></li>
-      </ul>
-    </div>
-    <div class="col-md-4 col-12" >
-      <h1>Links</h1>
-      <ul>
-        <li><a href="">a</a></li>
-        <li><a href="">a</a></li>
-        <li><a href="">a</a></li>
-        <li><a href="">a</a></li>
-      </ul>
-    </div>
-    <div class="col-md-4 col-12" >
-    <h1>Links</h1>
-    <ul>
-      <li><a href="">a</a></li>
-      <li><a href="">a</a></li>
-      <li><a href="">a</a></li>
-      <li><a href="">a</a></li>
-      </ul>
-    </div>
+  
    
   </div></main>
   </footer>
