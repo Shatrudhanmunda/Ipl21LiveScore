@@ -1,0 +1,149 @@
+<div class="rca-batting-score rca-padding">
+    <h3>
+      <?php
+      $totalO = 0;
+      $totalR = 0;
+      $totalW = 0;
+      foreach ($result['data']['bowling']['1']['scores'] as $list) {
+        $totalO = $totalO + $list['O'];
+        $totalR = $totalR + $list['R'];
+        $totalW = $totalW + $list['W'];
+      }
+      echo $result['data']['batting']['1']['title'];
+
+      ?>
+      <strong> <?php echo $totalR ?>/<?php echo $totalW ?>(<?php echo $totalO;  ?>)</strong>
+    </h3>
+    <div class="rca-row">
+      <div class="rca-header rca-table">
+        <div class="rca-col rca-player">
+          Batsmen
+        </div>
+        <div class="rca-col">
+          R
+        </div>
+        <div class="rca-col">
+          4s
+        </div>
+        <div class="rca-col">
+          6s
+        </div>
+        <div class="rca-col">
+          SR
+        </div>
+      </div>
+    </div>
+    <?php foreach ($result['data']['batting'][1]['scores'] as $list) {
+
+    ?>
+      <div class="rca-row">
+        <div class="rca-table">
+          <div class="rca-col rca-player">
+            <?php echo $list['batsman'];
+            $color = "red";
+            if ($list['dismissal-info'] == 'not out') {
+              $color = "green";
+            }
+            ?>
+
+            <br>
+            <samp style="color:<?php echo $color ?>; font-size:12px"> <?php echo $list['dismissal-info'] ?></samp>
+          </div>
+          <div class="rca-col">
+            <?php echo $list['R'] . "(" . $list['B'] . ")" ?>
+          </div>
+          <div class="rca-col">
+            <?php echo $list['4s'] ?>
+          </div>
+          <div class="rca-col">
+            <?php echo $list['6s'] ?>
+          </div>
+          <div class="rca-col">
+            <?php echo $list['SR'] ?>
+          </div>
+        </div>
+      </div>
+    <?php } ?>
+    <div class="rca-row">
+      <div class="rca-table">
+        <div class="rca-col rca-player">
+          Player x2
+        </div>
+        <div class="rca-col">
+          8 (7)
+        </div>
+        <div class="rca-col">
+          0
+        </div>
+        <div class="rca-col">
+          1
+        </div>
+        <div class="rca-col">
+          114.29
+        </div>
+      </div>
+    </div>
+    <div class="rca-clear"></div>
+          </div>
+</div>
+<div class="rca-bowling-score rca-padding">
+    <h3><?php echo $result['data']['bowling']['1']['title']; ?></h3>
+    <div class="rca-row">
+      <div class="rca-header rca-table">
+        <div class="rca-col rca-player">
+          Bowler
+        </div>
+        <div class="rca-col small">
+          O
+        </div>
+        <div class="rca-col small">
+          M
+        </div>
+        <div class="rca-col small">
+          R
+        </div>
+        <div class="rca-col small">
+          W
+        </div>
+        <div class="rca-col small">
+          Econ
+        </div>
+        <div class="rca-col small">
+          Extras
+        </div>
+      </div>
+    </div>
+
+    <?php foreach ($result['data']['bowling'][1]['scores'] as $list) {
+
+    ?>
+      <div class="rca-row">
+        <div class="rca-table">
+          <div class="rca-col rca-player">
+            <?php echo $list['bowler'] ?>
+          </div>
+          <div class="rca-col small">
+            <?php echo $list['O'] ?>
+          </div>
+          <div class="rca-col small">
+            <?php echo $list['M'] ?>
+          </div>
+          <div class="rca-col small">
+            <?php echo $list['R'] ?>
+          </div>
+          <div class="rca-col small">
+            <?php echo $list['W'] ?>
+          </div>
+          <div class="rca-col small">
+            <?php echo $list['Econ'] ?>
+          </div>
+          <div class="rca-col small">
+            <?php echo $list['NB'] + $list['WD'] ?>
+          </div>
+        </div>
+      </div>
+
+    <?php } ?>
+
+    <div class="rca-clear"></div>
+  
